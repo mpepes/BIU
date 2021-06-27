@@ -8,6 +8,8 @@ import { CartComponent } from './cart/cart.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProductComponent } from './products/product/product.component';
 import { ButtonComponent } from './commonCompnents/button/button.component';
+import { LinkButtonComponent } from './commonCompnents/link-button/link-button.component';
+import { ProductDetailsComponent } from './products/product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { ButtonComponent } from './commonCompnents/button/button.component';
     CartComponent,
     NavbarComponent,
     ProductComponent,
-    ButtonComponent
+    ButtonComponent,
+    LinkButtonComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
