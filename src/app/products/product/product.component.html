@@ -1,6 +1,7 @@
 <div>
-  <img src="{{ product.imgUrl }}" alt="{{ product.name }}">
   <p>{{ product.name }}</p>
 <!--  <app-button [label]="'Add to cart'" [onClick]="onClick"></app-button>-->
-  <app-link-button [label]="product.name" [href]="'/detail/' + product.id"></app-link-button>
+  <app-link-button [href]="'/detail/' + product.id">
+    <img src="{{ product.imgUrl }}" alt="{{ product.name }}">
+  </app-link-button>
 </div>

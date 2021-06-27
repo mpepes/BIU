@@ -7,7 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 export class LinkButtonComponent {
   @Input() href: string
-  @Input() label: string
 
   constructor() { }
 }
