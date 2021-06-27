@@ -11,11 +11,14 @@ import { CartService } from "../../services/cart.service";
 })
 export class ProductDetailsComponent implements OnInit {
   public product?: ProductModel
+  public quantity: number
   constructor(
     private productsService: ProductsService,
     private cartService: CartService,
     private route: ActivatedRoute,
-  ) { }
+  ) {
+    this.quantity = 1
+  }
 
   ngOnInit(): void {
     const id = +(this.route.snapshot.paramMap.get('id'))
@@ -23,11 +26,14 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   addItemToCart = () => {
-    const quantity = 1
     const item = this.productsService.getProductById(this.product.id)
     this.cartService.addItem({
       ...item,
-      quantity,
+      quantity: this.quantity,
     })
+  }
+
+  onQuantityChange = (quantity: number) => {
+    this.quantity = quantity
   }
 }

@@ -17,6 +17,7 @@ export class CartService {
 
   addItem(item: CartItemModel): void {
     this.items.push(item)
+    console.log(this.items)
   }
 
   removeItem(id: number): void {

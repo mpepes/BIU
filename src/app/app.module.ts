@@ -10,6 +10,7 @@ import { ProductComponent } from './products/product/product.component';
 import { ButtonComponent } from './commonCompnents/button/button.component';
 import { LinkButtonComponent } from './commonCompnents/link-button/link-button.component';
 import { ProductDetailsComponent } from './products/product-details/product-details.component';
+import { QuantityInputComponent } from './products/quantity-input/quantity-input.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ProductDetailsComponent } from './products/product-details/product-deta
     ProductComponent,
     ButtonComponent,
     LinkButtonComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    QuantityInputComponent
   ],
   imports: [
     BrowserModule,

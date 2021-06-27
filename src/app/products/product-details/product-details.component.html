@@ -1,4 +1,5 @@
 <div>
   <p>{{ product.name }}</p>
   <app-button [onClick]="addItemToCart" [label]="'Add to cart'"></app-button>
+  <app-quantity-input [onQuantityChange]="onQuantityChange"></app-quantity-input>
 </div>
