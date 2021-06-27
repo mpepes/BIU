@@ -10,4 +10,8 @@ export class ProductComponent {
   @Input() product: ProductModel
 
   constructor() {}
+
+  onClick = () => {
+    console.log(this.product.name)
+  }
 }

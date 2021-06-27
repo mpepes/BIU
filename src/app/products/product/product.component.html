@@ -1,3 +1,5 @@
 <div>
-  {{ product.name }}
+  <img src="{{ product.imgUrl }}" alt="{{ product.name }}">
+  <p>{{ product.name }}</p>
+  <app-button [label]="'Add to cart'" [onClick]="onClick"></app-button>
 </div>
