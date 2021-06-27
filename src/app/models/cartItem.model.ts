@@ -1,6 +1,5 @@
-export class CartItemModel {
-  name: string
+import { ProductModel } from "./product.model";
+
+export class CartItemModel extends ProductModel {
   quantity: number
-  price: number
-  id: number
 }

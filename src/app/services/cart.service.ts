@@ -7,7 +7,9 @@ import { CartItemModel } from "../models/cartItem.model";
 export class CartService {
   public items?: CartItemModel[]
 
-  constructor() { }
+  constructor() {
+    this.items = []
+  }
 
   getItems(): CartItemModel[] | undefined {
     return this.items
