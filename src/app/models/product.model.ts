@@ -3,4 +3,5 @@ export class ProductModel {
   imgUrl: string
   description: string
   price: number
+  id: number
 }
