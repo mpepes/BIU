@@ -1,6 +1,9 @@
-<div>
-  <p>{{ product.name }}</p>
+<div class="product">
   <app-link-button [href]="'/detail/' + product.id">
-    <img src="{{ product.imgUrl }}" alt="{{ product.name }}">
+    <img class="productThumbnail" src="{{ product.imgUrl }}" alt="{{ product.name }}">
   </app-link-button>
+  <div class="productDetails">
+    <p class="productName">{{ product.name }}</p>
+    <p class="productPrice">{{ product.price }} $</p>
+  </div>
 </div>

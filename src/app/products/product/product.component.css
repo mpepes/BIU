@@ -1,0 +1,31 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid lightgray;
+  margin: 10px;
+}
+
+.product:hover {
+  box-shadow: 0 0 15px 3px gray;
+}
+
+.productThumbnail {
+  height: 200px;
+  width: 200px;
+}
+
+.productDetails {
+  display: flex;
+  font-weight: bold;
+  border-top: 1px solid lightgray;
+  margin-top: 10px;
+}
+
+.productName, .productPrice {
+  margin: 0;
+}
+
+.productPrice {
+  margin-left: auto;
+}

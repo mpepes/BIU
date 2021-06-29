@@ -1,5 +1,7 @@
-<div>
-  <p>{{ product.name }}</p>
-  <app-button [onClick]="addItemToCart" [label]="'Add to cart'"></app-button>
-  <app-quantity-input [onQuantityChange]="onQuantityChange"></app-quantity-input>
+<div class="productDetailsContainer">
+  <app-product [product]="product"></app-product>
+  <div class="quantityInputContainer">
+    <app-button [onClick]="addItemToCart" [label]="'Add to cart'"></app-button>
+    <app-quantity-input [onQuantityChange]="onQuantityChange"></app-quantity-input>
+  </div>
 </div>
