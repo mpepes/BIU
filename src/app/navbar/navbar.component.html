@@ -11,7 +11,13 @@
           <a routerLink="/" class="nav-link">Home </a>
         </li>
         <li class="nav-item">
-          <a routerLink="/cart" class="nav-link">Cart </a>
+          <a routerLink="/cart" class="nav-link position-relative">
+            Cart
+            <div class="counterBadge">
+              {{ totalItemsCount }}
+            </div>
+          </a>
+
         </li>
       </ul>
     </div>
