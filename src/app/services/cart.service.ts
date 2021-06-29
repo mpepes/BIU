@@ -1,44 +1,44 @@
 import { Injectable } from '@angular/core';
 import { CartItemModel } from "../models/cartItem.model";
+import { Subject } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
-  public items?: CartItemModel[]
+  public items: CartItemModel[]
+  public itemsChange: Subject<CartItemModel[]> = new Subject<CartItemModel[]>()
 
   constructor() {
-    this.items = [
-      {
-        description: 'desc 1',
-        id: 1,
-        imgUrl: '',
-        name: 'Mover',
-        price: 100,
-        quantity: 3,
-      },
-      {
-        description: 'desc 2',
-        id: 2,
-        imgUrl: '',
-        name: 'Saw',
-        price: 200,
-        quantity: 3,
-      },
-    ]
-  }
-
-  getItems(): CartItemModel[] | undefined {
-    return this.items
+    this.items = []
+    this.itemsChange.subscribe(value => {
+      this.items = value
+    })
   }
 
   addItem(item: CartItemModel): void {
-    this.items.push(item)
-    console.log(this.items)
+    const itemAlreadyInCart = this.items.find(i => i.id === item.id)
+
+    if (itemAlreadyInCart) {
+      const newItems = this.items.map(i => (
+        i.id !== item.id
+          ? i
+          : {
+            ...item,
+            quantity: item.quantity + i.quantity,
+          }
+      ))
+
+      this.itemsChange.next(newItems)
+      return
+    }
+
+    const newItems = [...this.items, item]
+    this.itemsChange.next(newItems)
   }
 
   removeItem(id: number): void {
-    this.items = this.items.filter(i => i.id !== id)
-    console.log(this.items)
+    const newItems = this.items.filter(i => i.id !== id)
+    this.itemsChange.next(newItems)
   }
 }
