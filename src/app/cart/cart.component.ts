@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from "../services/cart.service";
+import { CartItemModel } from "../models/cartItem.model";
 
 @Component({
   selector: 'app-cart',
@@ -7,7 +8,7 @@ import { CartService } from "../services/cart.service";
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-  public items
+  public items: CartItemModel[]
 
   constructor(private cartService: CartService) { }
 
@@ -15,4 +16,8 @@ export class CartComponent implements OnInit {
     this.items = this.cartService.getItems()
   }
 
+  removeItem = (e) => {
+    const id = +e.target.dataset.itemid
+    this.cartService.removeItem(id)
+  }
 }

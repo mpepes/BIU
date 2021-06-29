@@ -1,5 +1,6 @@
 <button
-  (click)="onClick()"
+  [attr.data-itemId]="dataId"
+  (click)="onClick($event)"
 >
   {{ label }}
 </button>

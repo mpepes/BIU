@@ -1,1 +1,17 @@
-<p>cart works!</p>
+<table>
+  <tr>
+    <td>Item</td>
+    <td>Quantity</td>
+    <td>Price</td>
+    <td></td>
+  </tr>
+  <tr *ngFor="let item of items">
+    <td>{{ item.name }}</td>
+    <td>{{ item.quantity }}</td>
+    <td>{{ item.price }}</td>
+    <td>
+      <app-button [dataId]="item.id" [label]="'Remove'" [onClick]="removeItem"></app-button>
+    </td>
+  </tr>
+</table>
+

@@ -8,7 +8,24 @@ export class CartService {
   public items?: CartItemModel[]
 
   constructor() {
-    this.items = []
+    this.items = [
+      {
+        description: 'desc 1',
+        id: 1,
+        imgUrl: '',
+        name: 'Mover',
+        price: 100,
+        quantity: 3,
+      },
+      {
+        description: 'desc 2',
+        id: 2,
+        imgUrl: '',
+        name: 'Saw',
+        price: 200,
+        quantity: 3,
+      },
+    ]
   }
 
   getItems(): CartItemModel[] | undefined {
@@ -22,5 +39,6 @@ export class CartService {
 
   removeItem(id: number): void {
     this.items = this.items.filter(i => i.id !== id)
+    console.log(this.items)
   }
 }
