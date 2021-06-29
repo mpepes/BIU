@@ -14,6 +14,12 @@ export class CartComponent {
     return this.cartService.items
   }
 
+  get total(): number {
+    return this.cartService.items.reduce((totalCount, item) => (
+      totalCount + (item.quantity * item.price)
+    ), 0)
+  }
+
   removeItem = (e) => {
     const id = +e.target.dataset.itemid
     this.cartService.removeItem(id)
